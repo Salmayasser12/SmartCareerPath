@@ -429,22 +429,6 @@ GET  /api/payment/history/{userId}
 
 ---
 
-##  Screenshots
-
-### Dashboard
-![Dashboard](https://via.placeholder.com/800x450?text=User+Dashboard)
-
-### Career Recommendation
-![Recommendation](https://via.placeholder.com/800x450?text=Career+Recommendation+Results)
-
-### CV Builder
-![CV Builder](https://via.placeholder.com/800x450?text=CV+Builder+Interface)
-
-### Interview Simulator
-![Interview](https://via.placeholder.com/800x450?text=Interview+Simulator)
-
----
-
 ## 🚀 Features in Production
 
 ### **Implemented**

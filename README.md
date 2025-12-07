@@ -1,542 +1,503 @@
-🎯 Careera - Smart Career Path Recommender
-     
-Enterprise-grade AI-powered career guidance platform built with modern .NET and Angular, featuring intelligent career recommendations, CV generation, interview simulation, and job matching capabilities.
-________________________________________
-📑 Table of Contents
-•	Overview
-•	Key Features
-•	Technology Stack
-•	Architecture
-•	AI Integration
-•	Security Implementation
-•	Payment Integration
-•	Installation
-•	API Documentation
-•	Performance & Scalability
-•	Screenshots
-•	Contributing
-•	License
-________________________________________
-🌟 Overview
-Smart Career Path Recommender is a comprehensive career development platform that leverages artificial intelligence to provide personalized career guidance, professional CV generation, realistic interview simulations, and intelligent job matching. Built from the ground up using enterprise-level architecture patterns and best practices.
-Business Impact
-•	📊 85%+ accuracy in career path predictions using AI
-•	⚡ 60% faster CV creation compared to traditional methods
-•	🎯 Real-time job matching with skills gap analysis
-•	💼 AI-powered interview preparation with detailed feedback
-________________________________________
-✨ Key Features
-🎓 Career Path Recommendation Engine
-•	Intelligent Quiz System: Multi-dimensional assessment covering technical skills, soft skills, interests, and career goals
-•	AI-Powered Analysis: Machine learning algorithms analyze quiz responses to generate personalized career recommendations
-•	Confidence Scoring: Provides probability scores for each recommended career path
-•	Skills Gap Analysis: Identifies current vs. required skills with actionable learning paths
-•	Course Recommendations: Integrated learning resources mapped to skill gaps
-📄 AI CV Builder Agent
-•	Smart Content Generation: AI-powered professional summary and experience bullet points
-•	ATS Optimization: Resume parsing compatibility with Applicant Tracking Systems
-•	Multiple Templates: 10+ professional templates with Arabic/English localization
-•	Real-time Preview: Live editing with instant PDF export
-•	Version Control: Track and manage multiple CV versions
-•	Role-specific Customization: Tailored formatting based on target job role
-🎤 AI Interviewer Simulator
-•	Multi-format Interviews: Technical, HR, and Behavioral interview types
-•	Adaptive Questioning: Dynamic question generation based on user responses
-•	Audio Recording Support: Speech-to-text conversion for natural conversation flow
-•	Real-time Feedback: Instant evaluation with detailed improvement suggestions
-•	Performance Analytics: Track progress across multiple practice sessions
-•	Scoring System: Multi-dimensional scoring (Technical, Communication, Problem-solving, Confidence)
-•	Downloadable Reports: Comprehensive PDF reports with actionable insights
-🔍 Job Description Parser & Matcher
-•	NLP-based Extraction: Intelligent parsing of job requirements, responsibilities, and qualifications
-•	Skills Recognition: Automatic identification of hard and nice-to-have skills
-•	Match Score Algorithm: Proprietary algorithm calculating user-job compatibility (0-100 scale)
-•	Gap Analysis: Detailed breakdown of missing skills with learning recommendations
-•	Batch Processing: Support for analyzing multiple job descriptions simultaneously
-•	Export Functionality: Save parsed data for future reference
-🔐 Security & Authentication
-•	JWT-based Authentication: Secure token-based authentication with refresh tokens
-•	Role-based Access Control (RBAC): Granular permissions for User, Admin, and Career Counselor roles
-•	Password Security: bcrypt hashing with configurable work factors
-•	Email Verification: Double opt-in for account activation
-•	Password Reset Flow: Secure time-limited token-based reset mechanism
-•	API Rate Limiting: Protection against brute force and DDoS attacks
-•	CORS Configuration: Controlled cross-origin resource sharing
-•	Data Encryption: At-rest and in-transit encryption for sensitive data
-💳 Payment System
-•	Multi-provider Support: Stripe, PayPal, and Paymob (Egyptian market) integration
-•	Strategy Pattern Implementation: Flexible payment provider switching
-•	Webhook Handling: Secure webhook verification and processing
-•	Subscription Management: Monthly, yearly, and lifetime plans
-•	Refund Processing: Automated refund workflow with admin approval
-•	Payment History: Comprehensive transaction tracking and reporting
-•	Discount Codes: Promotional code support with validation
-•	Revenue Analytics: Real-time dashboard for financial metrics
-📊 Admin Dashboard
-•	User Management: CRUD operations with role assignment
-•	Content Management: Quiz questions, CV templates, interview scenarios
-•	Analytics & Reporting: User engagement, conversion funnels, revenue tracking
-•	System Monitoring: Performance metrics and error tracking
-•	Payment Reconciliation: Transaction verification and dispute resolution
-________________________________________
-🛠️ Technology Stack
-Backend (.NET 9)
-Core Frameworks & Libraries
-•	ASP.NET Core 9.0: Web API framework
-•	Entity Framework Core 9.0: ORM for database operations
-•	AutoMapper 13.0: Object-object mapping
-•	FluentValidation 11.9: Model validation
-•	MediatR 12.2: CQRS and mediator pattern (optional)
-Authentication & Security
-•	Microsoft.AspNetCore.Authentication.JwtBearer 9.0: JWT authentication
-•	BCrypt.Net-Next 4.0: Password hashing
-•	AspNetCoreRateLimit 5.0: API rate limiting
-Database
-•	Microsoft SQL Server 2022: Primary database
-•	Azure SQL Database: Cloud deployment option
-AI & External Services
-•	OpenAI API (GPT-4): Natural language processing and generation
-•	Azure Cognitive Services: Speech-to-text for interview audio
-•	Stripe.net SDK: Payment processing
-•	PayPal SDK: Alternative payment method
-•	Paymob SDK: Regional payment gateway
-Testing
-•	xUnit 2.6: Unit testing framework
-•	FluentAssertions 6.12: Assertion library
-•	Moq 4.20: Mocking framework
-•	Microsoft.AspNetCore.Mvc.Testing: Integration testing
-Utilities
-•	Serilog: Structured logging
-•	Hangfire: Background job processing
-•	Swashbuckle (Swagger): API documentation
-•	NodaTime: Date/time handling
-Frontend (Angular 18)
-Core Framework
-•	Angular 18.2: SPA framework
-•	TypeScript 5.3: Type-safe JavaScript
-•	RxJS 7.8: Reactive programming
-•	NgRx 17.0: State management
-UI/UX Libraries
-•	Angular Material 17: Material Design components
-•	PrimeNG 17: Rich UI component library
-•	ngx-charts: Data visualization
-•	ng-bootstrap: Bootstrap components
-•	Tailwind CSS 3.4: Utility-first CSS
-Form & Validation
-•	Angular Reactive Forms: Form handling
-•	ngx-formly: Dynamic form generation
-•	ngx-mask: Input masking
-Payment Integration
-•	@stripe/stripe-js: Stripe Elements
-•	ngx-paypal: PayPal checkout
-Rich Text & Media
-•	ngx-quill: Rich text editor for CV
-•	ngx-file-drop: Drag-and-drop file upload
-•	ngx-audio-player: Audio playback for interviews
-Utilities
-•	date-fns: Date manipulation
-•	lodash: Utility functions
-•	ngx-toastr: Toast notifications
-•	ngx-spinner: Loading indicators
-DevOps & Infrastructure
-•	Docker & Docker Compose: Containerization
-•	GitHub Actions: CI/CD pipelines
-•	Azure App Service: Cloud hosting
-•	Azure Blob Storage: File storage
-•	Azure Application Insights: Monitoring
-•	Azure Key Vault: Secrets management
-•	Nginx: Reverse proxy
-•	Let's Encrypt: SSL certificates
-________________________________________
-🏗️ Architecture
-Backend Architecture: Onion Architecture (Clean Architecture)
+#  Smart Career Path Recommender
+
+[![.NET](https://img.shields.io/badge/.NET-9.0-512BD4?style=flat-square&logo=dotnet)](https://dotnet.microsoft.com/)
+[![Angular](https://img.shields.io/badge/Angular-18-DD0031?style=flat-square&logo=angular)](https://angular.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
+
+> **Full-stack AI-powered career guidance platform** built with .NET 9 and Angular 18, featuring intelligent career recommendations, CV generation, interview simulation, and job parsing capabilities.
+
+---
+
+##  Table of Contents
+
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [Architecture](#architecture)
+- [Installation](#installation)
+- [API Documentation](#api-documentation)
+- [Screenshots](#screenshots)
+- [Developer](#developer)
+
+---
+
+##  Overview
+
+Smart Career Path Recommender is a comprehensive career development platform that integrates AI to provide personalized career guidance, professional CV generation, interview simulations, and job description parsing. Built from the ground up using clean architecture principles.
+
+### **Core Capabilities**
+-  **AI-powered career recommendations** based on user quiz responses
+-  **Automated CV generation** with professional formatting
+-  **Text-based interview simulator** with AI evaluation
+-  **Job description parsing** and requirement extraction
+-  **Secure authentication** with JWT
+-  **Multi-provider payment integration** (PayPal, Paymob)
+
+---
+
+##  Key Features
+
+###  **Career Path Recommendation Engine**
+- **Intelligent Quiz System**: Multi-dimensional assessment covering technical and soft skills
+- **AI-Powered Analysis**: Integration with AI models to analyze quiz responses and generate career recommendations
+- **Confidence Scoring**: Probability scores for each recommended career path
+- **Learning Recommendations**: Suggested courses and resources aligned with career goals
+
+###  **AI CV Builder**
+- **AI Content Generation**: Leverages AI models to create professional summaries and experience descriptions
+- **Form-based Input**: User-friendly forms for entering personal info, education, experience, projects, and skills
+- **PDF Export**: Professional PDF generation with clean formatting
+- **Single Template**: Clean, professional format supporting both Arabic and English
+- **Real-time Preview**: See changes as you build your CV
+
+###  **AI Interview Simulator**
+- **Multi-format Interviews**: Technical, HR, and Behavioral question types
+- **Chat-based Interface**: Text-only conversation format
+- **AI Evaluation**: Automated scoring and feedback on answers
+- **Performance Reports**: Detailed analysis of interview performance
+- **Question Bank**: Curated interview questions with AI-generated variations
+
+###  **Job Description Parser**
+- **Text Extraction**: Parse job descriptions to extract key information
+- **Skills Recognition**: Identify required skills and qualifications
+- **Structured Output**: Organized display of role title, responsibilities, and requirements
+- **Manual Analysis**: User-friendly interface for reviewing parsed data
+
+###  **Security & Authentication**
+- **JWT Authentication**: Token-based authentication system
+- **Password Security**: Secure password hashing with bcrypt
+- **Email Verification**: Account activation via email confirmation
+- **Password Reset**: Secure token-based password reset flow
+- **Role-based Access**: User and Premium account levels
+
+###  **Payment Integration**
+- **Multi-provider Support**: PayPal and Paymob integration
+- **Strategy Pattern**: Flexible payment provider architecture
+- **Webhook Handling**: Secure payment verification
+- **Subscription Plans**: Monthly and yearly billing options
+- **Transaction History**: Complete payment tracking
+- **Refund Management**: Manual refund processing workflow
+
+---
+
+##  Technology Stack
+
+### **Backend (.NET 9)**
+
+#### **Core Frameworks**
+- **ASP.NET Core 9.0**: Web API framework
+- **Entity Framework Core 9.0**: ORM for database operations
+- **AutoMapper 13.0**: Object-to-object mapping
+- **FluentValidation 11.9**: Request validation
+
+#### **Authentication & Security**
+- **Microsoft.AspNetCore.Authentication.JwtBearer**: JWT authentication
+- **BCrypt.Net-Next**: Password hashing
+
+#### **Database**
+- **Microsoft SQL Server**: Primary database
+- **SQL Server Management Studio**: Database management
+
+#### **AI Integration**
+- **Pre-trained AI Models**: Integration with existing AI APIs for text generation and analysis
+- **RESTful API Clients**: HTTP clients for AI service communication
+
+#### **Payment**
+- **PayPal SDK**: PayPal payment processing
+- **Paymob Integration**: Egyptian market payment gateway
+
+#### **Testing**
+- **xUnit**: Unit testing framework
+- **Moq**: Mocking framework
+- **FluentAssertions**: Assertion library
+
+#### **Utilities**
+- **Serilog**: Structured logging
+- **Swashbuckle (Swagger)**: API documentation
+
+### **Frontend (Angular 18)**
+
+#### **Core Framework**
+- **Angular 18**: SPA framework
+- **TypeScript 5.3**: Type-safe development
+- **RxJS 7.8**: Reactive programming
+
+#### **UI Components**
+- **Angular Material 17**: Material Design components
+- **Bootstrap 5**: Responsive grid and utilities
+- **Tailwind CSS 3.4**: Utility-first styling
+
+#### **Form Handling**
+- **Angular Reactive Forms**: Form management
+- **Custom Validators**: Business logic validation
+
+#### **Payment UI**
+- **PayPal JavaScript SDK**: PayPal buttons and checkout
+
+#### **Utilities**
+- **HttpClient**: API communication
+- **ngx-toastr**: Toast notifications
+- **RxJS Operators**: State management
+
+### **Development Tools**
+
+- **Visual Studio 2022**: Backend IDE
+- **Visual Studio Code**: Frontend IDE
+- **Postman**: API testing
+- **Git & GitHub**: Version control
+- **SQL Server Management Studio**: Database tools
+
+---
+
+##  Architecture
+
+### **Clean Architecture (Onion Architecture)**
+
+```
 ┌─────────────────────────────────────────────────────────┐
-│                   Presentation Layer                     │
-│         (SmartCareer.APIs - Controllers, DTOs)          │
+│              Presentation Layer (APIs)                   │
+│         Controllers, DTOs, Request/Response             │
 └────────────────────┬────────────────────────────────────┘
                      │
 ┌────────────────────▼────────────────────────────────────┐
-│                  Application Layer                       │
-│      (Services, Validation, Business Logic)             │
-│  - PaymentService  - QuizService  - AIService           │
+│              Application Layer                           │
+│       Services, Business Logic, Validation              │
 └────────────────────┬────────────────────────────────────┘
                      │
 ┌────────────────────▼────────────────────────────────────┐
-│                    Domain Layer                          │
-│     (Entities, Value Objects, Domain Logic)             │
-│  - User  - Payment  - Quiz  - Interview                 │
+│                Domain Layer                              │
+│        Entities, Enums, Value Objects                   │
 └────────────────────┬────────────────────────────────────┘
                      │
 ┌────────────────────▼────────────────────────────────────┐
-│                Infrastructure Layer                      │
-│    (Data Access, External Services, Persistence)        │
-│  - EF Core  - Repositories  - AI Clients                │
+│           Infrastructure Layer                           │
+│    Data Access, EF Core, External Services              │
 └─────────────────────────────────────────────────────────┘
-Design Patterns Implemented
-1.	Repository Pattern: Abstraction over data access
-2.	Unit of Work Pattern: Transaction management
-3.	Strategy Pattern: Payment provider switching
-4.	Factory Pattern: Object creation and dependency injection
-5.	Specification Pattern: Reusable query logic
-6.	Result Pattern: Consistent error handling
-7.	CQRS Pattern: Command-Query separation (optional)
-8.	Dependency Injection: Loose coupling and testability
-Project Structure
+```
+
+### **Design Patterns**
+- **Repository Pattern**: Data access abstraction
+- **Unit of Work Pattern**: Transaction management
+- **Strategy Pattern**: Payment provider switching
+- **Factory Pattern**: Object creation
+- **Result Pattern**: Consistent error handling
+- **Dependency Injection**: Loose coupling
+
+### **Project Structure**
+
+```
 SmartCareer.sln
-├── SmartCareer.APIs                    # Presentation Layer
+├── SmartCareer.APIs                    # REST API
 │   ├── Controllers/
 │   ├── Middleware/
-│   ├── Extensions/
 │   └── Program.cs
 │
 ├── SmartCareer.Application             # Business Logic
 │   ├── Services/
 │   ├── Validators/
-│   ├── Mapping/
-│   └── Strategies/
+│   └── Mapping/
 │
 ├── SmartCareer.Application.Abstraction # Contracts
 │   ├── DTOs/
-│   ├── Interfaces/
+│   ├── Services/
 │   └── Common/
 │
-├── SmartCareer.Domain                  # Core Domain
+├── SmartCareer.Domain                  # Domain Models
 │   ├── Entities/
-│   ├── ValueObjects/
 │   ├── Enums/
 │   └── Contracts/
 │
-├── SmartCareer.Infrastructure          # Data & External Services
-│   ├── Persistence/
-│   │   ├── Data/
-│   │   ├── Repositories/
-│   │   └── Configurations/
-│   └── ExternalServices/
-│
-└── SmartCareer.Tests                   # Testing
-    ├── Unit/
-    └── Integration/
-________________________________________
-🤖 AI Integration
-OpenAI GPT-4 Integration
-1. Career Path Recommendation
-// Sophisticated prompt engineering for accurate career predictions
-Prompt: "Analyze user responses across technical, soft, and domain skills. 
-         Consider interests, work preferences, and market trends. 
-         Provide top 3 career paths with 0-100 confidence scores..."
+└── SmartCareer.Infrastructure          # Data & External
+    └── Persistence/
+        ├── Data/
+        ├── Repositories/
+        └── Configurations/
+```
 
-Output: JSON-structured recommendations with skills, courses, and rationale
-2. CV Content Generation
-•	Professional Summary: Context-aware, role-specific summaries
-•	Experience Bullets: Action-verb focused, achievement-oriented descriptions
-•	Skills Optimization: ATS-friendly keyword placement
-3. Interview Question Generation
-•	Adaptive Difficulty: Adjusts based on user performance
-•	Role-specific: Tailored to target job position
-•	Multi-format: Behavioral (STAR), technical, situational
-4. Interview Answer Evaluation
-// Multi-dimensional scoring algorithm
-Evaluation Criteria:
-- Technical Accuracy (0-100)
-- Communication Clarity (0-100)
-- Problem-solving Approach (0-100)
-- Confidence & Delivery (0-100)
-5. Job Description Parsing
-•	NER (Named Entity Recognition): Extract skills, qualifications, responsibilities
-•	Semantic Analysis: Understand implicit requirements
-•	Normalization: Standardize skill names for matching
-AI Features Performance
-•	⚡ Average Response Time: < 2 seconds
-•	🎯 Accuracy Rate: 85%+
-•	🔄 Fallback Mechanisms: Cached responses for high availability
-•	💰 Cost Optimization: Token usage monitoring and caching strategies
-________________________________________
-🔐 Security Implementation
-Authentication Flow
-1. User Login → Validate Credentials
-2. Generate JWT (Access + Refresh Tokens)
-3. Store Refresh Token (HttpOnly Cookie)
-4. Client stores Access Token
-5. Token Refresh on Expiry (Silent Renewal)
-Security Features
-•	✅ JWT with RS256 Algorithm: Asymmetric encryption
-•	✅ Token Expiration: Access (15 min), Refresh (7 days)
-•	✅ Password Policy: Min 8 chars, complexity requirements
-•	✅ Account Lockout: After 5 failed attempts
-•	✅ Email Verification: Required for sensitive operations
-•	✅ HTTPS Only: TLS 1.3 enforcement
-•	✅ CORS Whitelist: Restricted origins
-•	✅ SQL Injection Prevention: Parameterized queries
-•	✅ XSS Protection: Input sanitization and output encoding
-•	✅ CSRF Protection: Anti-forgery tokens
-OWASP Top 10 Compliance
-All OWASP Top 10 vulnerabilities addressed with proper mitigation strategies.
-________________________________________
-💳 Payment Integration
-Supported Payment Providers
-1. Stripe (International)
-•	✅ Credit/Debit cards
-•	✅ Subscription management
-•	✅ Webhook verification
-•	✅ 3D Secure support
-2. PayPal (International)
-•	✅ PayPal wallet
-•	✅ One-time & recurring payments
-•	✅ Buyer protection
-3. Paymob (Egypt/MENA)
-•	✅ Egyptian cards
-•	✅ Mobile wallets (Vodafone Cash, etc.)
-•	✅ HMAC signature verification
-Pricing Plans
-Plan	Monthly	Yearly	Features
-Free	$0	-	Basic quiz, 1 trial interview, 1 CV preview
-AI Interviewer	$9.99	$99.99	Unlimited interviews, full reports, audio
-CV Builder	$6.99	$69.99	Unlimited CVs, premium templates
-Bundle	$13.99	$139.99	All features (Save 17%)
-Payment Features
-•	✅ Secure checkout sessions
-•	✅ Webhook processing for real-time updates
-•	✅ Automated invoice generation
-•	✅ Refund management system
-•	✅ Payment analytics dashboard
-•	✅ Multi-currency support (USD, EUR, EGP, GBP, SAR)
-________________________________________
-📦 Installation
-Prerequisites
-•	.NET 9 SDK
-•	Node.js 20+ & npm
-•	SQL Server 2022 / Azure SQL
-•	OpenAI API Key
-•	Payment provider accounts (Stripe/PayPal/Paymob)
-Backend Setup
+---
+
+##  AI Integration
+
+### **AI Model Integration**
+- Integration with pre-trained AI models via API calls
+- Prompt engineering for career recommendations
+- Text generation for CV content enhancement
+- Interview answer evaluation and scoring
+- Job description parsing and extraction
+
+### **Implementation Approach**
+```csharp
+// Example: Career recommendation using AI
+public async Task<RecommendationDto> GenerateRecommendation(QuizResultDto quiz)
+{
+    var prompt = BuildCareerPrompt(quiz);
+    var aiResponse = await _aiClient.GenerateCompletion(prompt);
+    return ParseRecommendation(aiResponse);
+}
+```
+
+---
+
+##  Installation
+
+### **Prerequisites**
+- .NET 9 SDK
+- Node.js 20+ & npm
+- SQL Server 2019+
+- AI API access credentials
+- Payment provider accounts
+
+### **Backend Setup**
+
+```bash
 # Clone repository
-git clone https://github.com/yourusername/smart-career-recommender.git
-cd smart-career-recommender
+git clone https://github.com/noura-ahmed/smart-career-recommender.git
+cd smart-career-recommender/backend
 
-# Navigate to backend
-cd backend
-
-# Restore dependencies
+# Restore packages
 dotnet restore
 
-# Update database connection string
-# Edit appsettings.json
-
+# Update connection string in appsettings.json
 # Apply migrations
 dotnet ef database update --project SmartCareer.Infrastructure.Persistence --startup-project SmartCareer.APIs
 
 # Run application
 dotnet run --project SmartCareer.APIs
-Frontend Setup
+```
+
+### **Frontend Setup**
+
+```bash
 # Navigate to frontend
 cd frontend
 
 # Install dependencies
 npm install
 
-# Update API endpoint
-# Edit src/environments/environment.ts
-
+# Update API URL in environment.ts
 # Run development server
 ng serve
 
 # Build for production
 ng build --configuration production
-Environment Variables
-# Backend (.NET)
-ConnectionStrings__DefaultConnection=Server=...;Database=SmartCareer;
-OpenAI__ApiKey=sk-...
-Stripe__SecretKey=sk_test_...
-Stripe__WebhookSecret=whsec_...
-PayPal__ClientId=...
-Paymob__ApiKey=...
-JWT__SecretKey=...
-JWT__Issuer=https://api.smartcareer.com
-JWT__Audience=https://smartcareer.com
-// Frontend (Angular)
-export const environment = {
-  production: false,
-  apiUrl: 'https://localhost:7001/api',
-  stripePublishableKey: 'pk_test_...',
-  paypalClientId: '...'
-};
-________________________________________
-📚 API Documentation
-Interactive API Documentation
-•	Swagger UI: https://localhost:7001/swagger
-•	ReDoc: https://localhost:7001/redoc
-Key Endpoints
-Authentication
-POST /api/auth/register
-POST /api/auth/login
-POST /api/auth/refresh-token
+```
+
+### **Configuration**
+
+```json
+// appsettings.json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=.;Database=SmartCareer;Trusted_Connection=True;"
+  },
+  "JWT": {
+    "SecretKey": "your-secret-key-here",
+    "Issuer": "SmartCareer",
+    "Audience": "SmartCareerUsers",
+    "ExpiryMinutes": 60
+  },
+  "AI": {
+    "ApiUrl": "your-ai-api-url",
+    "ApiKey": "your-api-key"
+  },
+  "PayPal": {
+    "ClientId": "your-paypal-client-id",
+    "ClientSecret": "your-paypal-secret"
+  },
+  "Paymob": {
+    "ApiKey": "your-paymob-key",
+    "IntegrationId": "your-integration-id"
+  }
+}
+```
+
+---
+## Frontend (Angular 18)
+
+The frontend of **Smart Career Path Recommender** is built entirely with **Angular 18** and provides a modern, responsive, and user-friendly interface for all platform features.
+
+### **Key Features**
+
+* **Dashboard**: Overview of user activities, recommendations, and CV status
+* **Career Quiz Interface**: Interactive quiz with real-time AI feedback
+* **CV Builder**: Form-based input with real-time preview and PDF export
+* **Interview Simulator**: Chat-based interface for AI-driven interview practice
+* **Job Parser**: Upload or paste job descriptions to extract structured information
+* **User Profile & Settings**: Manage account, subscription, and personal data
+* **Responsive UI**: Optimized for desktop, tablet, and mobile devices
+* **Notifications**: Toast alerts for actions and errors using ngx-toastr
+* **Payment UI**: Integrated PayPal and Paymob checkout buttons
+
+### **Technology & Libraries**
+
+* **Angular 18**: Single-page application framework
+* **TypeScript 5.3**: Type-safe development
+* **RxJS 7.8**: Reactive programming for state management
+* **Angular Material 17**: Material Design components
+* **Bootstrap 5 & Tailwind CSS 3.4**: Responsive and utility-first styling
+* **Reactive Forms**: Custom form validation for complex user inputs
+* **HttpClient**: API communication with backend
+* **ngx-toastr**: Toast notifications for user actions
+
+### **Running the Frontend**
+
+```bash
+# Navigate to frontend directory
+cd frontend
+
+# Install dependencies
+npm install
+
+# Update API base URL in src/environments/environment.ts
+# Run development server
+ng serve
+
+# Build for production
+ng build --configuration production
+```
+
+### **Folder Structure**
+
+```
+frontend/
+├── src/
+│   ├── app/
+│   │   ├── components/      # Reusable UI components
+│   │   ├── pages/           # Feature pages (Dashboard, CV Builder, Interview, etc.)
+│   │   ├── services/        # API services
+│   │   ├── guards/          # Route guards
+│   │   └── app.module.ts
+│   ├── assets/              # Images, icons, styles
+│   └── environments/        # Environment variables
+```
+
+This setup ensures a fully **responsive and modular frontend**, easily maintainable and extensible for future features such as audio interviews or mobile app integration.
+
+
+##  API Documentation
+
+### **Swagger Documentation**
+Access interactive API docs at: `https://localhost:7001/swagger`
+
+### **Key Endpoints**
+
+#### **Authentication**
+```http
+POST /api/auth/register       # User registration
+POST /api/auth/login          # User login
+POST /api/auth/refresh-token  # Token refresh
 POST /api/auth/forgot-password
 POST /api/auth/reset-password
-Career Recommendation
-GET  /api/quiz/questions
-POST /api/quiz/submit
-GET  /api/recommendation/{userId}
-POST /api/recommendation/generate
-AI Interviewer
-POST /api/interview/start
-POST /api/interview/{id}/answer
-POST /api/interview/{id}/finish
-GET  /api/interview/{id}/report
-CV Builder
-POST /api/cv/generate
-POST /api/cv/improve
-GET  /api/cv/templates
-GET  /api/cv/download/{id}
-Job Parser
-POST /api/job/parse
-GET  /api/job/match/{jobId}/{userId}
-Payment
-GET  /api/payment/pricing
+```
+
+#### **Career Recommendation**
+```http
+GET  /api/quiz/questions      # Get quiz questions
+POST /api/quiz/submit         # Submit quiz answers
+GET  /api/recommendation/{id} # Get recommendation
+```
+
+#### **CV Builder**
+```http
+POST /api/cv/generate         # Generate CV
+GET  /api/cv/download/{id}    # Download PDF
+GET  /api/cv/user/{userId}    # Get user CVs
+```
+
+#### **Interview**
+```http
+POST /api/interview/start     # Start interview session
+POST /api/interview/answer    # Submit answer
+POST /api/interview/finish    # Complete interview
+GET  /api/interview/report/{id}
+```
+
+#### **Job Parser**
+```http
+POST /api/job/parse           # Parse job description
+GET  /api/job/{id}            # Get parsed job
+```
+
+#### **Payment**
+```http
+GET  /api/payment/pricing     # Get pricing plans
 POST /api/payment/create-session
 POST /api/payment/verify
 GET  /api/payment/history/{userId}
-POST /api/payment/refund
-Sample Request/Response
-POST /api/quiz/submit
-Content-Type: application/json
+```
 
-{
-  "userId": 1,
-  "answers": [
-    { "questionId": 1, "answerValue": "A" },
-    { "questionId": 2, "answerValue": "Strongly Agree" }
-  ]
-}
-{
-  "success": true,
-  "data": {
-    "sessionId": 123,
-    "totalScore": 87.5,
-    "categoryScores": {
-      "technical": 90,
-      "communication": 85
-    },
-    "recommendationId": 456
-  }
-}
-________________________________________
-⚡ Performance & Scalability
-Performance Metrics
-•	🚀 API Response Time: < 200ms (95th percentile)
-•	⚡ Page Load Time: < 2s (First Contentful Paint)
-•	📊 Concurrent Users: 10,000+ (load tested)
-•	💾 Database Queries: Optimized with indexes and caching
-Optimization Techniques
-Backend
-•	Database Indexing: Composite indexes on frequently queried columns
-•	Query Optimization: EF Core query splitting, AsNoTracking for read-only
-•	Caching: Redis for frequently accessed data
-•	Async/Await: Non-blocking I/O operations
-•	Connection Pooling: Efficient database connection management
-•	API Pagination: Cursor-based pagination for large datasets
-Frontend
-•	Lazy Loading: Route-based code splitting
-•	OnPush Change Detection: Reduced Angular change detection cycles
-•	Virtual Scrolling: For large lists (CDK Virtual Scroll)
-•	Image Optimization: WebP format, lazy loading
-•	Bundle Analysis: Webpack bundle optimization
-•	Service Workers: PWA support for offline functionality
-Scalability Strategy
-•	Horizontal Scaling: Stateless API design
-•	Load Balancing: Azure App Service with auto-scaling
-•	CDN Integration: Azure CDN for static assets
-•	Database Scaling: Read replicas for high-read scenarios
-•	Background Jobs: Hangfire for async processing
-•	Message Queuing: Azure Service Bus for decoupling
-________________________________________
-📊 Testing & Quality Assurance
-Testing Coverage
-•	✅ Unit Tests: 85%+ code coverage
-•	✅ Integration Tests: All API endpoints
-•	✅ E2E Tests: Critical user flows (Cypress)
-Test Categories
-# Backend Tests
-dotnet test --logger "console;verbosity=detailed"
+---
 
-# Frontend Tests
-npm run test                 # Unit tests (Karma/Jasmine)
-npm run test:coverage        # Coverage report
-npm run e2e                  # End-to-end tests (Cypress)
-Quality Tools
-•	SonarQube: Code quality and security analysis
-•	ESLint/TSLint: Frontend code linting
-•	StyleCop: Backend code style enforcement
-•	Husky: Pre-commit hooks for code quality
-________________________________________
-📸 Screenshots
-Dashboard
- 
-Career Recommendation
- 
-AI Interviewer
- 
-CV Builder
- 
-________________________________________
-🚀 Deployment
-Docker Deployment
-# docker-compose.yml
-version: '3.8'
-services:
-  api:
-    build: ./backend
-    ports:
-      - "7001:80"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Production
-    depends_on:
-      - db
-  
-  frontend:
-    build: ./frontend
-    ports:
-      - "80:80"
-  
-  db:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=YourStrong@Password
-Azure Deployment
-# Deploy backend
-az webapp up --name smartcareer-api --resource-group smartcareer-rg
+##  Screenshots
 
-# Deploy frontend
-az storage blob upload-batch -d '$web' -s ./dist/frontend
-________________________________________
-🤝 Contributing
-Contributions are welcome! Please follow these steps:
-1.	Fork the repository
-2.	Create a feature branch (git checkout -b feature/AmazingFeature)
-3.	Commit changes (git commit -m 'Add AmazingFeature')
-4.	Push to branch (git push origin feature/AmazingFeature)
-5.	Open a Pull Request
-Code Style Guidelines
-•	Follow C# coding conventions (Microsoft guidelines)
-•	Use Angular style guide (John Papa)
-•	Write meaningful commit messages
-•	Include unit tests for new features
-•	Update documentation
-________________________________________
-👨‍💻 Developer
-[Salma Yasser]
-•	Full-Stack Software Engineer
-•	Email: salmayasser627@gmail.com
-•	LinkedIn: (https://linkedin.com/in/salma-yasser-207a2a205)
-________________________________________
-🙏 Acknowledgments
-•	OpenAI for GPT-4 API
-•	Stripe for payment infrastructure
-•	Microsoft for .NET and Azure services
-•	Angular team for the excellent framework
-________________________________________
-<div align="center"> 
-⭐ If you find this project useful, please consider giving it a star! ⭐
-Made with ❤️ by [Salma Yasser]
+### Dashboard
+![Dashboard](https://via.placeholder.com/800x450?text=User+Dashboard)
+
+### Career Recommendation
+![Recommendation](https://via.placeholder.com/800x450?text=Career+Recommendation+Results)
+
+### CV Builder
+![CV Builder](https://via.placeholder.com/800x450?text=CV+Builder+Interface)
+
+### Interview Simulator
+![Interview](https://via.placeholder.com/800x450?text=Interview+Simulator)
+
+---
+
+## 🚀 Features in Production
+
+### **Implemented**
+✅ User authentication and authorization  
+✅ Career path quiz with AI analysis  
+✅ CV generation with PDF export  
+✅ Text-based interview simulator  
+✅ Job description parsing  
+✅ Payment integration (PayPal, Paymob)  
+✅ User profile management  
+✅ Premium account system  
+✅ Responsive UI design  
+
+### **Future Enhancements**
+- Audio interview support
+- Advanced job matching algorithm
+- Skills gap detailed analysis
+- Multiple CV templates
+- Admin analytics dashboard
+- Discount code system
+- Mobile application
+
+---
+
+##  Developer
+
+**Salma Yasser**
+- Full-Stack Software Engineer
+- Email: salmayasser627@gmail.com
+- LinkedIn: [linkedin.com/in/salma-yasser-207a2a205](https://www.linkedin.com/in/salma-yasser-207a2a205)
+- GitHub: [github.com/Salmayasser12](https://github.com/Salmayasser12)
+
+---
+
+##  Acknowledgments
+
+- Pre-trained AI models for natural language processing
+- PayPal and Paymob for payment infrastructure
+- Microsoft for .NET and development tools
+- Angular team for the frontend framework
+
+---
+
+##  License
+
+This project is licensed under the MIT License.
+
+---
+
+<div align="center">
+
+**⭐ If you find this project useful, please consider giving it a star! ⭐**
+
+Made with ❤️ by Salma Yasser
+
 </div>
-
